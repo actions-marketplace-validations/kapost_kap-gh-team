@@ -1,4 +1,4 @@
-name: membership-check
+name: kap-gh-team
 description: "This action evaulates whether or not a the GitHub actor is a member of a specified team."
 branding:
   icon: 'sunrise'
@@ -14,6 +14,9 @@ inputs:
   team:
     description: 'The slug (i.e., the URL-friendly name) of the team to check membership for.'
     required: true 
+  user:
+    description: 'The user to check against.'
+    required: true
 
 runs:
   using: 'docker'
@@ -23,4 +26,4 @@ runs:
     - '-c'
     - |
       pip install PyGithub
-      python /github_team_check.py "${{inputs.access_token}}" "${{inputs.organization}}" "${{inputs.team}}" "${{inputs.user}}"
+      python /github/workspace/github_team_check.py "${{inputs.access_token}}" "${{inputs.organization}}" "${{inputs.team}}" "${{inputs.user}}"
