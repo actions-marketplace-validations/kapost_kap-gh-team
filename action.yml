@@ -23,4 +23,4 @@ runs:
     - '-c'
     - |
       pip install PyGithub
-      python /github_team_check.py "${{inputs.access_token}}" "${{inputs.organization}}" "${{inputs.team}}" "${{github.actor}}"
+      python /github_team_check.py "${{inputs.access_token}}" "${{inputs.organization}}" "${{inputs.team}}" "${{inputs.user}}"
