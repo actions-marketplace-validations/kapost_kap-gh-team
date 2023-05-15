@@ -1,7 +1,6 @@
 FROM python:3.10
 
-WORKDIR /app
-COPY github_team_check.py .
+COPY github_team_check.py /github_team_check.py
 
 RUN pip install PyGithub
 
