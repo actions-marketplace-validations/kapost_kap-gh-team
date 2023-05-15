@@ -20,10 +20,10 @@ inputs:
 
 runs:
   using: 'docker'
-  image: 'docker://python:3.10'
-  entrypoint: '/bin/sh'
+  image: 'Dockerfile'
   args:
-    - '-c'
-    - |
-      pip install PyGithub
-      python /github/workspace/github_team_check.py "${{inputs.access_token}}" "${{inputs.organization}}" "${{inputs.team}}" "${{inputs.user}}"
+    - ${{inputs.access_token}}
+    - ${{inputs.organization}}
+    - ${{inputs.team}}
+    - ${{inputs.user}}
+
