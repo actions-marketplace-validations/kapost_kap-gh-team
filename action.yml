@@ -1,5 +1,5 @@
 name: kap-gh-team
-description: "This action evaulates whether or not a the GitHub actor is a member of a specified team. The goal is to fail workflows if the GitHub actor is not a member of the specified team."
+description: "This action evaulates whether or not a the GitHub actor is a member of a specified team."
 branding:
   icon: 'sunrise'
   color: 'blue'
