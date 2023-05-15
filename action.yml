@@ -1,0 +1,26 @@
+name: kap-gh-team
+description: "This action evaulates whether or not a the GitHub actor is a member of a specified team. The goal is to fail workflows if the GitHub actor is not a member of the specified team."
+branding:
+  icon: 'sunrise'
+  color: 'blue'
+
+inputs:
+  access_token:
+    description: 'The GitHub access token used for authentication.'
+    required: true
+  organization:
+    description: 'The name of the GitHub organization to check membership for.'
+    required: true
+  team:
+    description: 'The slug (i.e., the URL-friendly name) of the team to check membership for.'
+    required: true 
+
+runs:
+  using: 'docker'
+  image: 'python:3.10'
+  entrypoint: '/bin/sh'
+  args:
+    - '-c'
+    - |
+      pip install PyGithub
+      python /github_team_check.py "${{inputs.access_token}}" "${{inputs.organization}}" "${{inputs.team}}" "${{github.actor}}"
