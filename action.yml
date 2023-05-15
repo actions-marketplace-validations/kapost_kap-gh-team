@@ -1,4 +1,4 @@
-name: kap-gh-team
+name: membership-check
 description: "This action evaulates whether or not a the GitHub actor is a member of a specified team."
 branding:
   icon: 'sunrise'
@@ -17,7 +17,7 @@ inputs:
 
 runs:
   using: 'docker'
-  image: 'python:3.10'
+  image: 'docker://python:3.10'
   entrypoint: '/bin/sh'
   args:
     - '-c'
